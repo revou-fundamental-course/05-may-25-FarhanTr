@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelingin Aja!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    
+        .left-section {
+            position: relative; 
+            padding-bottom: 60px; 
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -30px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .dot-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="pic/gambar travel.png" alt=""></div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#our-package">Our Package</a></li>
+                    <li><a href="#contact-us">Call Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <h1 class="hero-title">Trusted Travel Agent's</h1>
+            <p class="hero-subtitle">Kebahagiaan Anda adalah kebahagiaan kami</p>
+        </div>
+
+        <div class="main-content">
+            <div class="left-section">
+                <div class="slideshow-container">
+                    <div class="slide">
+                        <img src="pic/gambar 1.jpeg" alt="">
+                        
+                    </div>
+                    <div class="slide">
+                        <img src="pic/gambar 2.jpeg" alt="">
+                       
+                    </div>
+                    <div class="slide">
+                        <img src="pic/gambar 3.jpg" alt="">
+                       
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <p class="testimonial">"Liburan jadi menyenangkan bersama Travelingin Aja!."</p>
+                <div class="user-info">
+                    <div class="avatar-wrapper">
+                        <svg viewBox="0 0 48 48" fill="#E0F2F7">
+                            <circle cx="24" cy="24" r="24"/>
+                            <path d="M24 4A20 20 0 0 0 4 24c0 9.94 8.06 18 18 18s18-8.06 18-18A20 20 0 0 0 24 4zm0 36c-7.73 0-14-6.27-14-14s14-22 14-22 14 15.73 14 22-6.27 14-14 14zM12 16a4 4 0 1 1 8 0a4 4 0 0 1-8 0zm24 0a4 4 0 1 1 8 0a4 4 0 0 1-8 0zM16 32c-5.33 0-8 2.67-8 8h16c0-5.33-2.67-8-8-8zm16 0c-5.33 0-8 2.67-8 8h16c0-5.33-2.67-8-8-8z" fill="#90A4AE"/>
+                        </svg>
+                    </div>
+                    <div class="user-details">
+                        <strong>Florence Hughes</strong>
+                        <br>
+                        Ibu rumah Tangga, 30
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="contact-us">
+                    <div class="right-section" id="contact-us"></div>
+                    <h2>Contact Us</h2>
+                    <p class="contact-subtext">Sales akan menghubungi anda 1x24 Jam setelah data kami terima.</p>
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" placeholder="First and last name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">What are you interested in?</label>
+                        <div class="select-wrapper">
+                            <select id="interest" name="interest">
+                                <option value="">Select option</option>
+                                <option value="package1">Paket Liburan 1</option>
+                                <option value="package2">Paket Liburan 2</option>
+                                <option value="package2">Paket Liburan 3</option>
+                                <option value="custom">Custom Trip</option>
+                            </select>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-icon">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <button type="submit">SEND</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <p class="bottom-title"><strong>Travelingin Aja! menyediakan beberapa berbagai paket liburan yang dibuat untuk memberikan pengalaman liburan pada setiap destinasi yang dipilih. Nikmati kenyamanan dan keindahan pada berbagai tempat.</strong></p>
+            <div class="feature">
+                <div class="feature-number">1</div>
+                <p class="feature-text">Jaminan Kepuasan dengan layanan 24/7 dari tim perjalanan profesional kami, yang selalu siap membantu di setiap langkah perjalanan Anda, bahkan untuk permintaan mendadak atau perubahan jadwal.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-number">2</div>
+                <p class="feature-text">Pengalaman Tak Terlupakan dengan Paket All-Inclusive yang memberikan Anda akses ke tempat-tempat eksotis dengan pemandu lokal terbaik, sehingga Anda dapat menikmati liburan tanpa khawatir mengatur detail perjalanan.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-number">3</div>
+                <p class="feature-text">Akomodasi Premium di Hotel Bintang 5 dengan pemandangan menakjubkan di setiap destinasi, dilengkapi dengan terbaik dan kuliner khas bintang 5 yang akan memanjakan Anda.</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-header">
+                <div class="footer-section" id="our-package"></div>
+                <h2>Our Package</h2>
+            </div>
+            
+            <div class="packages">
+                <div class="package">
+                    <div class="icon-container">
+                        <div class="icon lightbulb">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="package-title">Bali</h3>
+                    </div>
+                    <p class="package-desc">Bali dengan keseimbangan sempurna antara keindahan alam, kekayaan budaya, dan fasilitas modern yang tidak mengherankan. Apapun jenis liburan yang Anda cari - relaksasi, petualangan, spiritual, atau kuliner - Bali memiliki semua yang Anda butuhkan untuk menciptakan kenangan tak terlupakan.</p>
+                </div>
+                
+                <div class="package">
+                    <div class="icon-container">
+                        <div class="icon lightbulb">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="package-title">Japan</h3>
+                    </div>
+                    <p class="package-desc">Jepang menawarkan pengalaman traveling yang mendalam dan beragam. Dari hiruk pikuk Tokyo yang futuristik hingga ketenangan kuil Kyoto yang kuno, dari keindahan alam Hokkaido hingga pantai tropis Okinawa, Jepang adalah destinasi yang menawarkan sesuatu untuk setiap jenis traveler. Keunikan budaya, keramahan penduduk, infrastruktur yang sempurna, dan kuliner mendunia menjadikan Jepang salah satu destinasi wisata terbaik di dunia yang patut dikunjungi setidaknya sekali seumur hidup.</p>
+                </div>
+                
+                <div class="package">
+                    <div class="icon-container">
+                        <div class="icon lightbulb">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="package-title">Singapore</h3>
+                    </div>
+                    <p class="package-desc">Singapura adalah sebuah negara kota yang memikat dan sangat cocok sebagai destinasi wisata, menawarkan perpaduan unik antara modernitas, kemudahan akses, dan kekayaan budaya. Singapura memiliki arsitektur futuristik, sistem transportasi publik yang efisien (MRT), dan fasilitas kelas dunia, termasuk Bandara Changi yang ikonis. Bahasa Inggris sebagai bahasa utama memudahkan wisatawan internasional, dan ukurannya yang kecil membuat navigasi antar atraksi menjadi mudah. Dari Gardens by the Bay yang memukau hingga Marina Bay Sands yang mewah dan Sentosa Island yang penuh hiburan, Singapura menawarkan berbagai atraksi yang tak terlupakan.</p>
+                </div>
+                
+                <div class="package">
+                    <div class="icon-container">
+                        <div class="icon star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="package-title">Korea Selatan</h3>
+                    </div>
+                    <p class="package-desc">Korea Selatan adalah destinasi wisata yang menarik karena perpaduan unik antara budaya tradisional dan modern. Negara ini menawarkan sejarah yang kaya dengan istana-istana megah dan kuil-kuil kuno, serta budaya pop global seperti K-Pop dan drama Korea. Korea Selatan juga merupakan pemimpin dalam teknologi dengan kota-kota modern dan infrastruktur yang efisien. Destinasi wisata ikonik termasuk Seoul, Busan, Jeju Island, dan Gyeongju, yang masing-masing menawarkan daya tarik yang berbeda.</p>
+                </div>
+                
+                <div class="package">
+                    <div class="icon-container">
+                        <div class="icon star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="package-title">Belanda</h3>
+                    </div>
+                    <p class="package-desc">Belanda adalah destinasi wisata yang menawan di Eropa Barat, terkenal dengan kincir angin ikonik, ladang tulip berwarna-warni, kota-kota indah, dan warisan seni yang kaya. Negara ini menawarkan kota-kota bersejarah dan modern seperti Amsterdam, Rotterdam, The Hague, dan Utrecht, yang masing-masing memiliki daya tarik unik. Belanda juga terkenal dengan ikon budaya seperti kincir angin dan tulip, serta museum-museum kelas dunia yang menyimpan karya seni dari para master Belanda.</p>
+                </div>
+                
+                <div class="package">
+                    <div class="icon-container">
+                        <div class="icon star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="package-title">Amerika Selatan</h3>
+                    </div>
+                    <p class="package-desc">Amerika Serikat adalah destinasi wisata yang luas dan beragam, menawarkan pengalaman yang tak tertandingi. Negara ini memiliki kota-kota ikonik seperti New York City, Los Angeles, Chicago, dan San Francisco, yang masing-masing menawarkan budaya, kuliner, dan atraksi yang unik. Amerika Serikat juga diberkahi dengan keajaiban alam seperti Grand Canyon, Yellowstone National Park, dan Yosemite National Park, serta pantai-pantai yang menakjubkan.</p>
+                </div>
+            </div>
+            
+            <div class="closing">
+                <h2>Tentang Kami</h2>
+                <p>Kami adalah agen perjalanan terkemuka yang berdedikasi untuk memberikan pengalaman perjalanan yang luar biasa dengan harga yang kompetitif. Tim konsultan perjalanan kami yang berpengalaman sangat mencintai perjalanan dan berkomitmen untuk memastikan perjalanan Anda tak terlupakan.</p>
+                <a href="#" class="cta-button">Call to Action</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="logo">Travelingin Aja!</div>
+                <div class="footer-links">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <p class="copyright">© 2019 Moqups</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
